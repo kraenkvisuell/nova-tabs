@@ -1,6 +1,10 @@
 # Laravel Nova Tabs Package
 [![Latest Version on Github](https://img.shields.io/packagist/v/kraenkvisuell/nova-tabs.svg?style=flat)](https://packagist.org/packages/kraenkvisuell/nova-tabs)
 
+This is a fork from [https://github.com/eminiarts/nova-tabs](https://github.com/eminiarts/nova-tabs). All the credit for this package goes to them.
+
+We just forked it because development seems to have halted on the repo, and we needed to make some urgent changes. We intend to maintain this package, though, and when we are satisfied with its status, we might throw it up on novapackages (as yet another Laravel Nova Tabs Package).
+
 1. [Installation](#Installation)
 2. [Usage](#Usage)
     1. [Tabs Panel](#tabs-panel)
