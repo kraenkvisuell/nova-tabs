@@ -1,6 +1,6 @@
 {
-    "name": "eminiarts/nova-tabs",
-    "description": "Laravel Nova - Tabs.",
+    "name": "kraenkvisuell/nova-tabs",
+    "description": "Laravel Nova - Tabs",
     "keywords": [
         "laravel",
         "nova"
@@ -10,22 +10,37 @@
             "name": "Emini Arts GmbH",
             "email": "support@eminiarts.ch",
             "homepage": "https://eminiarts.ch"
+        },
+        {
+            "name": "Krank Visuell GbR",
+            "email": "kontakt@kraenk.de",
+            "homepage": "https://kraenk.de"
         }
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "require": {
-        "php": ">=7.1.0",
-        "laravel/nova": ">=2.9.0"
+        "php": ">=7.3.0"
+    },
+    "require-dev": {
+        "laravel/nova": "~3.0",
+        "orchestra/testbench": "^5.3",
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
-            "Eminiarts\\Tabs\\": "src/"
+            "Kraenkvisuell\\Tabs\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Eminiarts\\Tabs\\TabsServiceProvider"
+                "Kraenkvisuell\\Tabs\\TabsServiceProvider"
             ]
         }
     },

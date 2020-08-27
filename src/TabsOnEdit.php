@@ -1,5 +1,5 @@
 <?php
-namespace Eminiarts\Tabs;
+namespace Kraenkvisuell\Tabs;
 
 use Laravel\Nova\Fields\FieldCollection;
 use Laravel\Nova\Panel;

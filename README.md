@@ -1,5 +1,5 @@
 # Laravel Nova Tabs Package
-[![Latest Version on Github](https://img.shields.io/packagist/v/eminiarts/nova-tabs.svg?style=flat)](https://packagist.org/packages/eminiarts/nova-tabs)
+[![Latest Version on Github](https://img.shields.io/packagist/v/kraenkvisuell/nova-tabs.svg?style=flat)](https://packagist.org/packages/kraenkvisuell/nova-tabs)
 
 1. [Installation](#Installation)
 2. [Usage](#Usage)
@@ -17,7 +17,7 @@
 You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require eminiarts/nova-tabs
+composer require kraenkvisuell/nova-tabs
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ You can group Fields of a Resource into Tabs.
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
+use Kraenkvisuell\Tabs\Tabs;
 
 public function fields()
 {
@@ -61,7 +61,7 @@ If you are only using Tabs without another default Panel, you can set `withToolb
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
+use Kraenkvisuell\Tabs\Tabs;
 
 public function fields(Request $request)
     {
@@ -96,14 +96,14 @@ You can also group Relations into Tabs. Make sure to use the `AvailableTabFields
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
+use Kraenkvisuell\Tabs\Tabs;
 
 class User extends Resource
 {
     public function fields(Request $request)
     {
         return [
-            
+
            new Tabs('Relations', [
                 HasMany::make('Invoices'),
                 HasMany::make('Notes'),
@@ -123,7 +123,7 @@ class User extends Resource
 ![image](https://user-images.githubusercontent.com/3426944/51089905-aa297680-1774-11e9-9611-4446ca13ab4a.png)
 
 ```php
-use Eminiarts\Tabs\Tabs;
+use Kraenkvisuell\Tabs\Tabs;
 
 public function fields(Request $request)
 {
@@ -148,8 +148,8 @@ If your Model uses the `Laravel\Nova\Actions\Actionable` Trait you can put the A
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
-use Eminiarts\Tabs\ActionsInTabs; // Add this Trait
+use Kraenkvisuell\Tabs\Tabs;
+use Kraenkvisuell\Tabs\ActionsInTabs; // Add this Trait
 use Laravel\Nova\Actions\ActionResource; // Import the Resource
 
 class Client extends Resource
@@ -159,7 +159,7 @@ class Client extends Resource
     public function fields(Request $request)
     {
         return [
-            
+
             (new Tabs('Client Custom Details', [
                 'Address'  => [
                     ID::make('Id', 'id'),
@@ -188,8 +188,8 @@ If you want to show Tabs on the Edit View, use the `TabsOnEdit` Trait in your Re
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
-use Eminiarts\Tabs\TabsOnEdit; // Add this Trait
+use Kraenkvisuell\Tabs\Tabs;
+use Kraenkvisuell\Tabs\TabsOnEdit; // Add this Trait
 
 class Client extends Resource
 {
@@ -205,7 +205,7 @@ By default, the Tabs component moves the search input and the create button to t
 ```php
 // in app/Nova/Resource.php
 
-use Eminiarts\Tabs\Tabs;
+use Kraenkvisuell\Tabs\Tabs;
 
 class User extends Resource
 {
@@ -213,7 +213,7 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            
+
             (new Tabs('Relations', [
                 HasMany::make('Invoices')
             ]))->defaultSearch(true),
@@ -230,7 +230,7 @@ Set `->defaultSearch(true)` to revert it to its default.
 
 
 ## Upgrade to 1.0.0
-Thanks to [dkulyk/nova-tabs](https://github.com/dkulyk/nova-tabs) the Package got a lot simpler. 
+Thanks to [dkulyk/nova-tabs](https://github.com/dkulyk/nova-tabs) the Package got a lot simpler.
 
 - No need to use a Trait anymore. Remove all `AvailableTabFields` Traits in your Resources.
 - Everything is in `Tabs` now. There is no `TabsPanel` anymore. Remove all `TabsPanels` and adjust your Fields according to this Readme.
